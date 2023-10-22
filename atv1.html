@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Calc {
+    constructor() {
+    }
+    dobro(nmr) {
+        return nmr * 2;
+    }
+}
+
+const clcldr = new Calc();
+const nmr = parseFloat(prompt("Digite um número:"));
+const rsltd = clcldr.dobro(nmr);
+document.write(`O dobro de ${nmr} é ${rsltd}`)
+    </script> 
+</body>
+</html>

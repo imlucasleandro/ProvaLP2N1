@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Tabela de Votos</h1>
+    <table border="1">
+        <tr>
+            <th>Tipo de Voto</th>
+            <th>Quantidade</th>
+            <th>Percentual em relação ao total de eleitores</th>
+        </tr>
+        <tr>
+            <td>Votos Válidos</td>
+            <td id="votosValidos">800</td>
+            <td id="pervalidos"></td>
+        </tr>
+        <tr>
+            <td>Votos em Branco</td>
+            <td id="votosBrancos">150</td>
+            <td id="perbrancos"></td>
+        </tr>
+        <tr>
+            <td>Votos Nulos</td>
+            <td id="votosNulos">50</td>
+            <td id="pernulos"></td>
+        </tr>
+    </table>
+
+    <script>
+        class calculodosvotos {
+    constructor(eleitores, validos, brancos, nulos) {
+        this.eleitores = eleitores;
+        this.validos = validos;
+        this.brancos = brancos;
+        this.nulos = nulos;
+    }
+
+    calcularpervalidos() {
+        return (this.validos / this.eleitores) * 100;
+    }
+
+    calcularPercentualBrancos() {
+        return (this.brancos / this.eleitores) * 100;
+    }
+
+    calcularpernulos() {
+        return (this.nulos / this.eleitores) * 100;
+    }
+}
+
+const eleitores = 1000;
+const validos = 800;
+const brancos = 150;
+const nulos = 50;
+
+const calculadora = new calculodosvotos(eleitores, validos, brancos, nulos);
+const pervalidos = calculadora.calcularpervalidos();
+const perbrancos = calculadora.calcularPercentualBrancos();
+const pernulos = calculadora.calcularpernulos();
+
+document.getElementById("pervalidos").textContent = pervalidos.toFixed(2) + "%";
+document.getElementById("perbrancos").textContent = perbrancos.toFixed(2) + "%";
+document.getElementById("pernulos").textContent = pernulos.toFixed(2) + "%";
+    </script>
+</body>
+</html>

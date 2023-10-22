@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+    class Area {
+    area2(lado) {
+        return lado * lado;
+    }
+    area3(lado) {
+        return lado * lado * lado;
+    }
+}
+
+const calcarea = new Area();
+
+const lado2 = parseFloat(prompt("Digite o valor do lado do quadrado:"));;
+const area22 = calcarea.area2(lado2);
+document.write(`A área quadrada é: ${area22}`);
+
+const lado3 = parseFloat(prompt("Digite o valor do lado do cubo:"));
+const area33 = calcarea.area3(lado3);
+document.write(`  A área cúbica é: ${area33}`);
+    </script>
+</body>
+</html>
